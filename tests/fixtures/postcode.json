@@ -1,0 +1,68 @@
+{
+    "success": true,
+    "results": [
+        {
+            "udprn": 90000003,
+            "postcode": "LS1 9ZZ",
+            "postcode_outward": "LS1",
+            "postcode_inward": "9ZZ",
+            "postcode_type": "S",
+            "address_line_1": "Example Trading Ltd",
+            "address_line_2": "3-9",
+            "address_line_3": "Sample Street",
+            "organisation_name": "Example Trading Ltd",
+            "building_name": "3-9",
+            "thoroughfare": "Sample Street",
+            "post_town": "LEEDS",
+            "country": "England",
+            "district": "Leeds",
+            "ward": "Little London & Woodhouse",
+            "latitude": 53.8,
+            "longitude": -1.55,
+            "eastings": 429900,
+            "northings": 433900
+        },
+        {
+            "udprn": 90000002,
+            "postcode": "LS1 9ZZ",
+            "postcode_outward": "LS1",
+            "postcode_inward": "9ZZ",
+            "postcode_type": "S",
+            "address_line_1": "Flat 10",
+            "address_line_2": "Rose House",
+            "address_line_3": "12 Sample Street",
+            "sub_building_name": "Flat 10",
+            "building_name": "Rose House",
+            "building_number": "12",
+            "thoroughfare": "Sample Street",
+            "post_town": "Leeds",
+            "country": "England",
+            "district": "Leeds",
+            "latitude": 53.8,
+            "longitude": -1.55
+        },
+        {
+            "udprn": 90000001,
+            "postcode": "LS1 9ZZ",
+            "postcode_outward": "LS1",
+            "postcode_inward": "9ZZ",
+            "postcode_type": "S",
+            "address_line_1": "Flat 2",
+            "address_line_2": "Rose House",
+            "address_line_3": "12 Sample Street",
+            "sub_building_name": "Flat 2",
+            "building_name": "Rose House",
+            "building_number": "12",
+            "thoroughfare": "Sample Street",
+            "post_town": "Leeds",
+            "country": "England",
+            "district": "Leeds",
+            "latitude": 53.8,
+            "longitude": -1.55
+        }
+    ],
+    "meta": {
+        "countResults": 3,
+        "requestId": "test"
+    }
+}
