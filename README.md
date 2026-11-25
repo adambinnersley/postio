@@ -55,7 +55,7 @@ The county names returned are the ones in `adamb/uk-counties`, so `Counties::get
 | Country | Resolved from | Result |
 |---|---|---|
 | England | district | ceremonial county (`data/england.php`); Stockton-on-Tees south of the Tees resolves by outcode to North Yorkshire |
-| Wales | district | principal area (Cardiff, Gwynedd, ...) |
+| Wales | district | principal area (`data/wales.php`: Cardiff, Gwynedd, ...) |
 | Scotland | outcode | traditional county (`data/scotland.php`), with "City of Edinburgh" for the Edinburgh council area and a per-council fallback for new outcodes |
 | Northern Ireland | | empty string |
 

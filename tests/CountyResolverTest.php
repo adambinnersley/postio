@@ -73,7 +73,7 @@ class CountyResolverTest extends TestCase
         $targets = array_merge(
             array_keys($england['districts']),
             array_merge(...array_map('array_values', array_values($england['split']))),
-            CountyResolver::WALES,
+            require __DIR__ . '/../data/wales.php',
             [$scotland['edinburgh']],
             array_values($scotland['outcodes']),
             array_values($scotland['councils'])

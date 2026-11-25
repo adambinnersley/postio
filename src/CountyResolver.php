@@ -18,13 +18,6 @@ namespace Postio;
  */
 class CountyResolver
 {
-    public const WALES = [
-        'Blaenau Gwent', 'Bridgend', 'Caerphilly', 'Cardiff', 'Carmarthenshire', 'Ceredigion', 'Conwy',
-        'Denbighshire', 'Flintshire', 'Gwynedd', 'Isle of Anglesey', 'Merthyr Tydfil', 'Monmouthshire',
-        'Neath Port Talbot', 'Newport', 'Pembrokeshire', 'Powys', 'Rhondda Cynon Taf', 'Swansea',
-        'Torfaen', 'Vale of Glamorgan', 'Wrexham',
-    ];
-
     /** @var array<string, string>|null */
     private static ?array $england = null;
     /** @var array<string, array<string, string>> */
@@ -48,7 +41,10 @@ class CountyResolver
                 }
                 return '';
             case 'wales':
-                self::$wales ??= array_combine(array_map([self::class, 'key'], self::WALES), self::WALES);
+                if (self::$wales === null) {
+                    $areas = require __DIR__ . '/../data/wales.php';
+                    self::$wales = array_combine(array_map([self::class, 'key'], $areas), $areas);
+                }
                 return self::first(self::$wales, $names);
             case 'scotland':
                 self::loadScotland();
