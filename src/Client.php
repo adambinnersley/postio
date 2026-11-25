@@ -5,7 +5,6 @@ namespace Postio;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
-use GuzzleHttp\Exception\RequestException;
 use Postio\Exception\PostioException;
 use Psr\Http\Message\ResponseInterface;
 
@@ -101,7 +100,7 @@ class Client
                 }
             } catch (GuzzleException $e) {
                 if ($attempt >= $this->retries) {
-                    throw new PostioException($e->getMessage(), $e instanceof RequestException && $e->getResponse() ? $e->getResponse()->getStatusCode() : 0, 'connection_failed', null, $e);
+                    throw new PostioException($e->getMessage(), 0, 'connection_failed', null, $e);
                 }
             }
             usleep((int)((200 * (3 ** $attempt) + random_int(0, 100)) * 1000));
