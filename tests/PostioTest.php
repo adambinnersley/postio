@@ -139,6 +139,15 @@ class PostioTest extends TestCase
         $this->assertCount(3, $postio->findAddresses('LS1 9ZZ'));
     }
 
+    public function testAnyTransportExceptionIsReportedAsConnectionFailed(): void
+    {
+        $postio = $this->postio([new \RuntimeException('Connection timed out')]);
+
+        $this->assertFalse($postio->findAddresses('LS1 9ZZ'));
+        $this->assertSame('connection_failed', $postio->getLastError()->error);
+        $this->assertSame(0, $postio->getLastError()->status);
+    }
+
     public function testMalformedKeyIsIgnored(): void
     {
         $postio = $this->postio([]);

@@ -98,7 +98,9 @@ class Client
                 if (!$e->isTransient() || $attempt >= $this->retries) {
                     throw $e;
                 }
-            } catch (GuzzleException $e) {
+            } catch (GuzzleException | \Exception $e) {
+                // Middleware on a supplied client (Laravel's Http::fake(), for one) can throw
+                // its own exception types for a failed transfer, not only Guzzle's.
                 if ($attempt >= $this->retries) {
                     throw new PostioException($e->getMessage(), 0, 'connection_failed', null, $e);
                 }
